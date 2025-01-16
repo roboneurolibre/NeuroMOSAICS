@@ -1,0 +1,13 @@
+[
+    {
+      "src": "https://osf.io/54vhx/download",
+      "dst": "../data/Cebus1_M1_190221.mat",
+      "projectName": "neurolibre-demo-dataset"
+    },
+    {
+      "src": "https://osf.io/54vhx/download",
+      "dst": "../data/Macaque1_M1_181212.mat",
+      "projectName": "neurolibre-demo-dataset"
+    }
+  ]
+  

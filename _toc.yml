@@ -1,0 +1,5 @@
+format: jb-book
+root: paper.md
+chapters:
+  - file: content/figure_cebus.ipynb
+  - file: content/figure_macaque.ipynb

@@ -1,0 +1,101 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: 'NeuroMOSAICS: Collection of Multi-scale Open-Source Across Interface, Conditions & Species Neurostimulation Datasets.'
+  #subtitle: A template for reproducible preprints
+  thebe:
+    binder:
+      url: https://binder-preview.conp.cloud # NeuroLibre binder URL, production will override this.
+      repo: neurolibre/mystical-article # Production will override this.
+      ref: HEAD # Production will override this.
+  authors:
+    - name: Lison Kardassevitch
+      affiliations: udem, mila
+      email: lison.kardassevitch@umontreal.ca
+    - name: Davide Burchielli
+      affiliations: polymtl, mila
+      email: davide.burchielli@polymtl.ca
+    - name: Numa Dancause
+      affiliations: udem
+      email: numa.dancause@umontreal.ca
+    - name: Marco Bonizzato
+      affiliations: polymtl, udem, mila
+      email: marco.bonizzato@polymtl.ca
+
+      
+  affiliations:
+    - id: polymtl
+      institution: Polytechnique Montreal
+      ror: https://ror.org/05f8d4e86 
+      isni: 0000 0004 0435 3292
+      department: Electrical Engineering
+      address: 2500 Chem. de Polytechnique
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H3T 1J4
+      phone: 1 (514) 340-4711
+    - id: udem
+      institution: Université de Montréal
+      ror: https://ror.org/0161xgx34
+      isni: 0000 0001 2104 2136
+      address: 3200 Jean-brillant
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H3T 1N8
+    - id: mila
+      institution: Mila - Quebec Artificial Intelligence Institute
+      ror: https://ror.org/05c22rx21
+      address: 6666 Saint-Urbain Street
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H2S 3H1
+
+  keywords:
+    - Neurostimulation
+    - Optimization 
+    - Machine learning
+    - Open source dataset
+  github: https://github.com/neurolibre/mystical-article # TODO
+  #banner: static/banner.jpg
+  venue: Neurolibre #Production will override this.
+  subject: Living Preprint # Production will override this.
+  numbering:
+    headings: true
+  doi: 10.55458/neurolibre.xxxxx # Production will override this.
+  open_access: true
+  license:
+    content: CC-BY-4.0
+    code: MIT
+  abbreviations:
+    MyST: Markedly Structured Markdown
+  sphinx:
+    extra_extensions:
+      - sphinxcontrib.bibtex
+  bibliography:
+    - paper.bib
+  resources:
+    - content/figure_cebus.ipynb
+    - content/figure_macaque.ipynb
+site:
+  template: article-theme # Or book-theme
+  #options:
+  #  favicon: static/favicon.ico # Production will override this for branding.
+  #  logo: static/logo.png # Production will override this for branding.
+  #  twitter: neurolibre
+
+# This section is under development
+neurolibre:
+  rees:
+    runtime:
+      - name: neurolibre/mystical-article
+        ref: 43aff5ae300e0a3108710290871703bb22a3e29f
+    data:
+      - src: "https://osf.io/54vhx/download",
+        dst: "../data/Cebus1_M1_190221.mat",
+        projectName: "cebus-dataset"
+      - src: "https://osf.io/54vhx/download",
+        dst: "../data/Macaque1_M1_181212.mat",
+        projectName: "macaque-dataset"
