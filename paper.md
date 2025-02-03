@@ -94,15 +94,22 @@ Dataset 1 was collected during in vivo sessions that involved repeated stimulati
 
 :::{figure} #figCebcell
 :label: figMcqcell
-Part 1. Cebus Heatmap of responses in the ADP, mean of the motor response for each electrode on a 96 array. Part2. Details of the MEP response for one electrode selected in the ADP. Top left figure : Mean MEP response over repetitions. Top right figure : Distribution of peak amplitude. Bottom left figure : stack of queries (raw MEP response on each repetition). 
+**A.  Heatmap of Motor Responses Across a 96-Electrode Array in M1 of an anesthetized Cebus:** This panel displays the mean motor responses for a selected muscle, averaged across repetitions, for each electrode in a 96-electrode array (10x10 grid with 4 unused electrodes). To view data for a specific muscle, select the desired muscle from the list on the right. The available muscles are: Flexor Carpi Ulnaris (FCU), Extensor Digitorum Communis (EDC), Extensor Carpi Radialis (ECR), Opponens Pollicis (OP), Flexor Pollicis Brevis (FPB), and Adductor Pollicis (AP).
+**B.  Detailed Motor Evoked Potential (MEP) Response for a Single Electrode:** This panel provides detailed visualizations for the MEP response corresponding to a selected electrode from the heatmap in A (click on the corresponding cell to select it).
+- *Top Left:* The mean MEP waveform across all repetitions.
+- *Top Right:* The distribution of peak amplitudes for the selected electrode.
+- *Bottom Left:* A stack plot showing the rectified raw MEP waveforms for individual repetitions. Red color hilights outliered trials.
 :::
 The clear topographic organization of the responses observed in sedated NHPs become considerably noisier and more selective in awake NHPs [Figure Macaque Part 1]. These NHP implants were older, and the quality of the electrical interface at the EMG wire-muscle contact can degrade over time, potentially contributing to variations in noise levels in the recorded muscle responses across subjects. Additionally, the NHPs were awake, which may have further contaminated MEPs with spontaneous muscle activations, which are possibly present even when the condition of no muscle activity pre-stimulation is enforced. Consequently, this dataset provides an opportunity to test optimization approaches on data that differ significantly from the previous dataset.
 
 :::{figure} #figMcqcell
 :label: figMcqcell
-Part 1. Macaque Heatmap, mean of the motor response for each electrode on a 96 array in contact with M1. Part 2. 
+**A.  Heatmap of Motor Responses Across a 96-Electrode Array in M1 of an awaken Macaque:** This panel displays the mean motor responses for a selected muscle, averaged across repetitions, for each electrode in a 96-electrode array (10x10 grid with 4 unused electrodes). To view data for a specific muscle, select the desired muscle from the list on the right. The available muscles are: First Dorsal Interosseous (FDI), Flexor Digitorum Superficialis (FDS), Extensor Carpi Radialis (ECR), Extensor Digitorum Communis (EDC).
+**B.  Detailed Motor Evoked Potential (MEP) Response for a Single Electrode:** This panel provides detailed visualizations for the MEP response corresponding to a selected electrode from the heatmap in A (click on the corresponding cell to select it).
+- *Top Left:* The mean MEP waveform across all repetitions.
+- *Top Right:* The distribution of peak amplitudes for the selected electrode.
+- *Bottom Left:* A stack plot showing the rectified raw MEP waveforms for individual repetitions. Red color hilights outliered trials.
 :::
-
 High selectivity becomes particularly problematic when the search space is expanded (such as by adding additional parameters like stimulation amplitude and frequency) and even more so in noisy conditions. If it makes it harder to identify the best electrode, the global maximum of the function to optimize, and increases the risk of getting stuck in local maxima during optimization. For example, while searching for the electrode that grants maximal response in the First Dorsal Interosseous muscle [Figure Macaque Part1], one could easily get stuck at coordinates (7,7) on the heatmap. If the algorithm hasn’t yet queried the optimal electrode at coordinates (4,1), and instead queries (7,7) at a given query q, it will produce the best result thus far. The algorithm would then continue to exploit the local maximum around (7,7) without knowing that a better option exists unless it explores very specific electrodes (4,1) or (5,1) [Figure Macaque Part 2]. With around 50 electrodes to query in a limited number of stimulations, the algorithm's exploration strategy becomes critical to avoid local maxima. This issue of local maxima and high selectivity is also observed in awake rats, as seen in the Left Medial Gastrocnemius available in Dataset 1 on OSF. However, the smaller array (32 electrodes, compared to 96 for NHPs) reduces the complexity of the search.
 
 The temporal aspect of the responses can play an important role in the nature of the response. In any scenario from this dataset, the stronger stimuli MEP are peaking at the same time as we can observe in the stacked MEP where deeper blue lines are vertically crossing all the trials. 
@@ -112,6 +119,16 @@ Considering noise (such as muscle activations unrelated to stimulation), some re
 
 This dataset was collected from four sedated rats, resulting in smooth topographic organization of the spinal cord with high variance for the average responses. Similar to capuchin in Dataset 1, the relaxed muscle state in sedated animals, with no intention of motor control or reflex interference, contributes to the smooth responses. However, unlike Dataset 1, this dataset involves spinal cord (spinal cord) stimulation, leading to some key differences in the results. One notable distinction is the spreader cluster of best electrodes, which may be attributed to the different recruitment of spinal cord stimulation compared to motor cortex stimulation.  Because dorsal spinal cord stimulation is closer to the muscle target than M1 stimulation, there is less variability in the responses. Indeed, less synapses (and thus less pulses) lead to a higher repeatability of the responses. This very clear repeatability (a straight deep blue line across each trial in stack MEP figures) makes the identification of outliers easier, and they are also listed in a parameter is_valid and highlighted in red in the stack MEP figures. In this case, the mean and the standard deviation were computed without those outliers.
 
+:::{figure} #figRatcell
+:label: figRatcell
+**A.  Heatmap of Motor Responses Across a 64-Electrode Array in M1 of an anesthetized Rat:** This panel displays the mean motor responses for a selected muscle, averaged across repetitions, for each electrode in a 96-electrode array (10x10 grid with 4 unused electrodes). To view data for a specific muscle, select the desired muscle from the list on the right. The available muscles are: Right Triceps (R Tr), Right Biceps (R Bi), Right Torso (R Trs), Right Wrist flexor (R WrFlex), Right Spinal Deltoid (R SpDel), Left Triceps (L Tr),
+Left Biceps (L Bi), Left Tors (L Trs), Left Wrist flexor (L WrFlex), Left Spinal Deltoid (L SpDel).
+**B.  Detailed Motor Evoked Potential (MEP) Response for a Single Electrode:** This panel provides detailed visualizations for the MEP response corresponding to a selected electrode from the heatmap in A (click on the corresponding cell to select it).
+- *Top Left:* A stack plot showing the rectified raw MEP waveforms for individual repetitions. Red color hilights outliered trials.
+- *Top Right:* A stack plot showing the filtered MEP waveforms for individual repetitions.
+- *Bottom Left:* The mean MEP waveform across all repetitions. 
+- *Bottom Right:* The distribution of peak amplitudes for the selected electrode.
+:::
 
 When the clear repeatability from this dataset has a positive impact on the optimization process, the excitability and noise can be, in some cases, particularly challenging. Indeed, the excitability can increase and decrease drastically in a few queries (like for electrode (2,4) in Left Biceps [Figure rat Part 2]), and some electrodes are losing contact on half of the process (like in electrode (4,3) in Left Biceps), making it harder to identify a best electrode and to take a decision on the definition of what is the best electrode. This phenomenon highlights potential future use of this dataset to take into account the non-stationarity of the responses.
 
@@ -128,9 +145,29 @@ This collection is an attempt to bring together open neurostimulation characteri
 ## Data avaibility statement
 
 The datasets presented in this living white paper are openly available on the platform OSF (https://osf.io/) :  
--	Dataset 1 (M1 stimulations on NHPs and rats) : https://osf.io/54vhx/, reference number : 54vhx.  
--	Dataset 2 (spinal cord stimulations on rats) :   
+-	**Dataset 1** (M1 stimulations on NHPs) : https://osf.io/54vhx/, reference number : 54vhx.  
+-	**Dataset 1 bis** (M1 stimulations on rats) : A similar dataset that **Dataset 1** but conducted on rats is also available at https://osf.io/54vhx/, reference number : 54vhx.
+-	**Dataset 2** (spinal cord stimulations on rats) : https://osf.io/kpb7x/, reference number : kpb7x.  
 Additional datasets will be progressively integrated into this living white paper. For each dataset already included, this paper is augmented: a supporting text is provided to clarify its relevance and potential applications, along with a direct link to access the data.
+
+## Credit authorship contribution statement
+
+**Lison Kardassevitch:** Writing – review & editing, Writing – original draft, Visualization, Project administration, Methodology, Formal analysis, Conceptualization.  
+**Davide Burchielli:** Writing – review & editing.  
+**Numa Dancause:** Writing – review & editing, Supervision.  
+**Marco Bonizzato:** Writing – review & editing, Supervision, Resources, Project administration, Funding acquisition, Conceptualization.  
+
+## Funding sources 
+
+This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC; RGPIN-2023-04370) and New Frontiers in Research Fund Exploration (NFRFE-2022-00394).
+
+## Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Aknowledgements
+
+The authors extend their gratitude to all scholars who have openly shared datasets for neurostimulation optimization, fostering the growth of the community. This includes the contributors who released **Dataset 1** in 2021. NeuroMOSAICS owes its existence to a steadfast community commitment to open science.
+
 
 ## References
 

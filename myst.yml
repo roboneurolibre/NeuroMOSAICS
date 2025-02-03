@@ -71,9 +71,6 @@ project:
     code: MIT
   abbreviations:
     MyST: Markedly Structured Markdown
-  sphinx:
-    extra_extensions:
-      - sphinxcontrib.bibtex
   bibliography:
     - paper.bib
   resources:
@@ -99,3 +96,6 @@ neurolibre:
       - src: "https://osf.io/54vhx/download",
         dst: "../data/Macaque1_M1_181212.mat",
         projectName: "macaque-dataset"
+      - src: ,
+        dst: ,
+        projectName: "rat1-dataset"
