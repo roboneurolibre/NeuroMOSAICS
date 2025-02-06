@@ -121,7 +121,7 @@ This dataset was collected from four sedated rats, resulting in smooth topograph
 
 :::{figure} #figRatcell
 :label: figRatcell
-**A.  Heatmap of Motor Responses Across a 64-Electrode Array in M1 of an anesthetized Rat:** This panel displays the mean motor responses for a selected muscle, averaged across repetitions, for each electrode in a 96-electrode array (10x10 grid with 4 unused electrodes). To view data for a specific muscle, select the desired muscle from the list on the right. The available muscles are: Right Triceps (R Tr), Right Biceps (R Bi), Right Torso (R Trs), Right Wrist flexor (R WrFlex), Right Spinal Deltoid (R SpDel), Left Triceps (L Tr),
+**A.  Heatmap of Motor Responses Across a 64-Electrode Array in M1 of an anesthetized Rat:** This panel displays the mean motor responses for a selected muscle, averaged across repetitions, for each electrode in a 64-electrode array (8x8 grid with 4 unused electrodes). To view data for a specific muscle, select the desired muscle from the list on the right. The available muscles are: Right Triceps (R Tr), Right Biceps (R Bi), Right Torso (R Trs), Right Wrist flexor (R WrFlex), Right Spinal Deltoid (R SpDel), Left Triceps (L Tr),
 Left Biceps (L Bi), Left Tors (L Trs), Left Wrist flexor (L WrFlex), Left Spinal Deltoid (L SpDel).
 **B.  Detailed Motor Evoked Potential (MEP) Response for a Single Electrode:** This panel provides detailed visualizations for the MEP response corresponding to a selected electrode from the heatmap in A (click on the corresponding cell to select it).
 - *Top Left:* A stack plot showing the rectified raw MEP waveforms for individual repetitions. Red color hilights outliered trials.

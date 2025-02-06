@@ -1,14 +1,14 @@
 {
-  {
-     "src": "https://osf.io/54vhx",
-     "dst": "../data",
-     "projectName": "neuromosaics"
-  },
-  {
-     "src": "https://osf.io/kpb7x",
-     "dst": "../data",
-     "projectName": "neuromosaics"
-  }
-}
+   "datset1": {
+      "src": "https://osf.io/54vhx",
+      "dst": "../data",
+      "projectName": "neuromosaics"
+   },
+   "datset2": {
+      "src": "https://osf.io/kpb7x",
+      "dst": "../data",
+      "projectName": "neuromosaics"
+   }
+ }
 
   
