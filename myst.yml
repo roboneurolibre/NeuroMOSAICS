@@ -83,19 +83,3 @@ site:
   #  logo: static/logo.png # Production will override this for branding.
   #  twitter: neurolibre
 
-# This section is under development
-neurolibre:
-  rees:
-    runtime:
-      - name: neurolibre/mystical-article
-        ref: 43aff5ae300e0a3108710290871703bb22a3e29f
-    data:
-      - src: "https://osf.io/54vhx/download",
-        dst: "../data/Cebus1_M1_190221.mat",
-        projectName: "cebus-dataset"
-      - src: "https://osf.io/54vhx/download",
-        dst: "../data/Macaque1_M1_181212.mat",
-        projectName: "macaque-dataset"
-      - src: ,
-        dst: ,
-        projectName: "rat1-dataset"
