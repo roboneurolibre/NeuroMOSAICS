@@ -6,7 +6,7 @@ project:
   thebe:
     binder:
       url: https://binder-preview.conp.cloud # NeuroLibre binder URL, production will override this.
-      repo: neurolibre/mystical-article # Production will override this.
+      repo: LisonK/NeuroMOSAICS # Production will override this.
       ref: HEAD # Production will override this.
   authors:
     - name: Lison Kardassevitch
