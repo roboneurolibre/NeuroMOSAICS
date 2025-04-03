@@ -3,3 +3,4 @@ root: paper.md
 chapters:
   - file: content/figure_cebus.ipynb
   - file: content/figure_macaque.ipynb
+  - file: content/figure_rat1.ipynb

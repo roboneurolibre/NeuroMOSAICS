@@ -76,6 +76,7 @@ project:
   resources:
     - content/figure_cebus.ipynb
     - content/figure_macaque.ipynb
+    - content/figure_rat1.ipynb
 site:
   template: article-theme # Or book-theme
   #options:
