@@ -59,7 +59,7 @@ project:
     - Machine learning
     - Open source dataset
   github: https://github.com/neurolibre/mystical-article # TODO
-  #banner: static/banner.jpg
+  banner: featured.png
   venue: Neurolibre #Production will override this.
   subject: Living Preprint # Production will override this.
   numbering:
