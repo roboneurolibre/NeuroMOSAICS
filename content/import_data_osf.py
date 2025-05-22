@@ -47,15 +47,16 @@ def get_data(is_mat, is_macaque, mat, name):
         nChan = data[correspondance['nChan']][0][0]
         i1, i2, i3 = rM.shape[0], rM.shape[1], rM[0][0].shape[0]
         evoked_emg = np.stack(data[correspondance['evoked_emg']][0], axis=0)
-        sorted_resp = np.stack([np.squeeze(rM[i, j]) for i in range(i1) for j in range(i2)], axis=0)
-        sorted_resp = sorted_resp.reshape(i1, i2, i3)
+        #sorted_resp = np.stack([np.squeeze(rM[i, j]) for i in range(i1) for j in range(i2)], axis=0)
+        #sorted_resp = sorted_resp.reshape(i1, i2, i3)
 
         rN = data[correspondance['sorted_isvalid']]
         j1, j2, j3 = rN.shape[0], rN.shape[1], rN[0][0].shape[0]
         sorted_isvalid = np.stack([np.squeeze(rN[i, j]) for i in range(j1) for j in range(j2)], axis=0)
         sorted_isvalid = sorted_isvalid.reshape(j1, j2, j3)
 
-        sorted_respMean = data[correspondance['sorted_respMean']]
+        #sorted_respMean = data[correspondance['sorted_respMean']]
+        
         emgs = {
             'emgs': [name[0] for name in data[correspondance['emgs']][0]],
             'emgsabr': [name[0] for name in data[correspondance['emgsabr']][0]]
@@ -79,12 +80,34 @@ def get_data(is_mat, is_macaque, mat, name):
         resp_region = data[correspondance['resp_region']][0]
 
         stimProfile = data[correspondance['stimProfile']][0]
+        
+        # compute baseline
+        where_zero = np.where(abs(stimProfile) > 10**(-50))[0][0]
+        window_size = int(fs * 30 * 10**(-3))
+        baseline = []
+        for iChan in range(nChan):
+            reps = np.where(stim_channel == iChan + 1)[0]
+            n_rep = len(reps)
+            # Compute mean over the last dimension (time), across those repetitions
+            mean_baseline = np.mean(sorted_filtered[iChan, :, :n_rep, where_zero - window_size : where_zero], axis=-1)
+            baseline.append(mean_baseline)
+        
+        baseline = np.stack(baseline, axis=0)  # shape: (nChan, nSamples)
+        
+        sorted_filtered = sorted_filtered - baseline[..., np.newaxis]
+        sorted_resp = np.max(sorted_filtered[:,:,:n_rep,resp_region[0]:resp_region[1]], axis=-1)
+        #sorted_respMean = np.mean(sorted_resp, axis=-1)
+        # Create a masked array where invalid points are masked
+        masked_resp = np.ma.masked_where(sorted_isvalid == 0, sorted_resp)
+        
+        # Compute the mean over the last axis, ignoring masked (invalid) values
+        sorted_respMean = masked_resp.mean(axis=-1)
 
         return {
         'correspondance': correspondance,
         'rM': rM, 'nChan': nChan, 'evoked_emg': evoked_emg, 'sorted_resp': sorted_resp,
         'rN': rN, 'sorted_isvalid': sorted_isvalid, 'sorted_respMean': sorted_respMean,
-        'emgs': emgs, 'ch2xy': ch2xy, 'sorted_evoked': sorted_evoked,
+        'emgs': emgs, 'ch2xy': ch2xy, 'sorted_evoked': sorted_filtered,
         'sorted_filtered': sorted_filtered, 'stim_channel': stim_channel, 'fs': fs,
         'parameters': parameters, 'n_muscles': n_muscles, 'maps': maps,
         'resp_region': resp_region, 'stimProfile': stimProfile
@@ -110,6 +133,42 @@ def get_data(is_mat, is_macaque, mat, name):
     stimProfile = mat['stimProfile'] 
     n_muscles = emgs.shape[0]
     additional_info = mat['additional_info'] 
+    
+    # compute baseline for filtered signal
+    nChan = parameters['nChan'][0]
+    where_zero = np.where(abs(stimProfile) > 10**(-50))[0][0]
+    window_size = int(fs * 35 * 10**(-3))
+    baseline = []
+    for iChan in range(nChan):
+        reps = np.where(stim_channel == iChan + 1)[0]
+        n_rep = len(reps)
+        # Compute mean over the last dimension (time), across those repetitions
+        mean_baseline = np.mean(sorted_filtered[iChan, :, :n_rep, 0 : where_zero], axis=-1)
+        baseline.append(mean_baseline)
+    baseline = np.stack(baseline, axis=0)  # shape: (nChan, nSamples)
+    
+    #remove baseline from filtered signal
+    sorted_filtered[:, :, :n_rep, :] = sorted_filtered[:, :, :n_rep, :] - baseline[..., np.newaxis]
+    sorted_resp = np.nanmax(sorted_filtered[:,:,:n_rep,int(resp_region[0]) :int(resp_region[1])], axis=-1)
+    masked_resp = np.ma.masked_where(sorted_isvalid[:,:,:n_rep] == 0, sorted_resp)
+    
+    sorted_respMean = masked_resp.mean(axis=-1)
+    
+    # compute baseline for evoked signal
+    baseline = []
+    for iChan in range(nChan):
+        reps = np.where(stim_channel == iChan + 1)[0]
+        n_rep = len(reps)
+        # Compute mean over the last dimension (time), across those repetitions
+        mean_baseline = np.mean(sorted_evoked[iChan, :, :n_rep, 0 : where_zero], axis=-1)
+        baseline.append(mean_baseline)
+    baseline = np.stack(baseline, axis=0)  # shape: (nChan, nSamples)
+    
+    #remove baseline from evoked signal
+    sorted_evoked[:, :, :n_rep, :] = sorted_evoked[:, :, :n_rep, :] - baseline[..., np.newaxis]
+    sorted_resp = np.nanmax(sorted_evoked[:,:,:n_rep,int(resp_region[0]) :int(resp_region[1])], axis=-1)
+    masked_resp = np.ma.masked_where(sorted_isvalid[:,:,:n_rep] == 0, sorted_resp)
+
 
     return {
         'evoked_emg': evoked_emg, 'filtered_emg':filtered_emg, 'sorted_resp': sorted_resp,
@@ -117,7 +176,7 @@ def get_data(is_mat, is_macaque, mat, name):
         'emgs': emgs, 'ch2xy': ch2xy, 'sorted_evoked': sorted_evoked,
         'sorted_filtered': sorted_filtered, 'stim_channel': stim_channel, 'fs': fs,
         'parameters': parameters, 'n_muscles': n_muscles, 'maps': maps, 'isvalid':isvalid,
-        'resp_region': resp_region, 'stimProfile': stimProfile, 'additional_info':additional_info
+        'resp_region': resp_region, 'stimProfile': stimProfile, 'additional_info':additional_info, 'baseline' : baseline
     }
 # -
 
