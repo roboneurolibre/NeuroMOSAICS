@@ -10,16 +10,16 @@ project:
       ref: HEAD # Production will override this.
   authors:
     - name: Lison Kardassevitch
-      affiliations: udem, mila
+      affiliations: udem, mila, circa
       email: lison.kardassevitch@umontreal.ca
     - name: Davide Burchielli
-      affiliations: polymtl, mila
+      affiliations: polymtl, mila, circa
       email: davide.burchielli@polymtl.ca
     - name: Numa Dancause
-      affiliations: udem
+      affiliations: udem, circa, cib
       email: numa.dancause@umontreal.ca
     - name: Marco Bonizzato
-      affiliations: polymtl, udem, mila
+      affiliations: polymtl, udem, mila, circa, cib
       email: marco.bonizzato@polymtl.ca
 
       
@@ -52,6 +52,20 @@ project:
       region: Quebec
       country: Canada
       postal_code: H2S 3H1
+    - id: circa
+      institution: CIRCA - Centre Interdisciplinaire de Recherche sur le Cerveau et l’Apprentissage
+      address: 3744, rue Jean-Brillant
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H1T 1P1
+    - id: cib
+      institution: CIB - Biomedical Innovation Centre
+      address: Pavillon Paul-G.-Desmarais, 2960 Chemin de la Tour,
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H3T 1J4
 
   keywords:
     - Neurostimulation
