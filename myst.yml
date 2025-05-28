@@ -72,7 +72,7 @@ project:
     - Optimization 
     - Machine learning
     - Open source dataset
-  github: https://github.com/neurolibre/mystical-article # TODO
+  github: https://github.com/LisonK/NeuroMOSAICS # TODO
   banner: featured.png
   venue: Neurolibre #Production will override this.
   subject: Living Preprint # Production will override this.
