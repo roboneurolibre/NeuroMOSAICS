@@ -47,13 +47,13 @@ In this section we describe how each featured dataset has been collected. We wro
 This dataset contains forelimb EMG responses to cortical stimulation in 4 male NHPs (2 macaques, 2 capuchins) and 6 female rats. The dataset, available on OSF, was collected to develop a Gaussian Process Bayesian Optimization (GPBO) framework, an algorithm designed to optimize neurostimulation parameters for maximizing MEPs. Cross-species data can challenge the robustness and adaptability of optimization algorithms, testing their ability to generalize across scales and from simpler to more complex cortical organizations, that approximate better the human brain. 
 
 The detailed protocol for surgery and experiment is available on M. Bonizzato et al. @bonizzato2023autonomous, @choiniere2024gaussian.
-The rats were implanted with 32-microelectrode arrays in the hindlimb sensorimotor cortex and the NHPs were implanted with 96-electrode arrays implanted in the hand area of the primary motor cortex (M1). For both rats and NHPs, the EMGs were implanted in forelimb muscles. When the stimulation protocol was running, the two capuchin NHP were under sedation and the two macaques were awake.
+The rats were implanted with 32-microelectrode arrays in the hindlimb sensorimotor cortex and the NHPs were implanted with 96-electrode arrays implanted in the hand area of the primary motor cortex (M1). For rats, the EMGs were implanted in leg muscles. For NHPs, the EMGs were implanted in hand and finger muscles. When the stimulation protocol was running, the two capuchin NHP were under sedation and the two macaques were awake.
 
 ### Dataset 2 – forelimb muscle responses to spinal stimulation in rats
 
 **Input:** coordinates of an electrode in a 64 electrodes array.  
 **Output:** motor evoked potentials from 8 to 10 arm muscles.  
-**Replicates:** Data were collected from N=4 rats (biological replicate). For each independent muscle, technical replicates ranged from 10 to 15 repetitions.   
+**Replicates:** Data were collected from N=4 rats (biological replicate), and for each biological replicate the array was placed up to 3 different sites of the spine (between C3 and C6). For each placement, 10 to 15 repetitions of single-pulse stimulation were delivered to each electrode in random order using Tucker-Davis Technologies (TDT) equipment.   
 **Depth:** The same neurostimulation is repeated 10 to 15 times per site (muscle) per subject, resulting in an equivalent number of MEP measurements being collected. Each MEP represents the muscle response within a time window of -35 to 40 ms relative to the stimulation delivery (0 ms).   
 **Rationale:** to develop optimization algorithms to efficiently optimize neurostimulation within a set of electrode location options and multiple concurrent output muscle objectives (8-10 bilateral and varied agonist/antagonist muscles).
 
