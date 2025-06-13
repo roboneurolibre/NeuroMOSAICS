@@ -1,7 +1,7 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: 'NeuroMOSAICS: Collection of Multi-scale Open-Source Across Interface, Conditions & Species Neurostimulation Datasets.'
+  title: 'NeuroMOSAICS: A collection of neurostimulation datasets - Multi-scale Open-Source Across Interfaces Conditions & Species.'
   #subtitle: A template for reproducible preprints
   thebe:
     binder:
