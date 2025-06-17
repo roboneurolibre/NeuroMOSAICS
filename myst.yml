@@ -3,6 +3,7 @@ version: 1
 project:
   title: 'NeuroMOSAICS: A collection of neurostimulation datasets - Multi-scale Open-Source Across Interfaces Conditions & Species.'
   #subtitle: A template for reproducible preprints
+  binder: https://terrarium.evidencepub.io
   thebe:
     binder:
       url: https://terrarium.evidencepub.io # NeuroLibre binder URL, production will override this.
@@ -85,6 +86,27 @@ project:
     code: MIT
   abbreviations:
     MyST: Markedly Structured Markdown
+    NeuroMOSAICS: Neurostimulation Multi-scale Open-Source Across Interface, Conditions & Species
+    NHP: non-human primates
+    DBS: Deep Brain Stimulation
+    TMS: Transcranial Magnetic Stimulation
+    FCU: Flexor Carpi Ulnaris
+    ECR: Extensor Carpi Radialis
+    OP: Opponens Pollicis
+    FPB: Flexor Pollicis Brevis
+    AP: Adductor Pollicis
+    DMEP: Detailed Motor Evoked Potential
+    FDI: First Dorsal Interosseous
+    FDS: Flexor Digitorum Superficialis
+    EDC: Extensor Digitorum Communis
+    R Tr: Right Triceps
+    R Bi: Right Biceps
+    R Trs: Right Torso
+    R WrFlex: Right Wrist flexor
+    R SpDel: Right Spinal Deltoid
+    L Tr: Left Triceps
+    L Bi: Left Biceps
+    L Trs: Left Tors
   bibliography:
     - paper.bib
   resources:
