@@ -208,12 +208,7 @@ This collection is an attempt to bring together open neurostimulation characteri
 
 # Availability
 
-The datasets presented in this living white paper are openly available on the platform [OSF](https://osf.io):  
--	**Dataset 1** (M1 stimulations on NHPs) : https://osf.io/54vhx/, reference number : `54vhx`.  
--	**Dataset 1 bis** (M1 stimulations on rats) : A similar dataset that **Dataset 1** but conducted on rats is also available at https://osf.io/54vhx/, reference number : `54vhx`.
--	**Dataset 2** (spinal cord stimulations on rats) : https://osf.io/kpb7x/, reference number : `kpb7x`.  
-
-Additional datasets will be progressively integrated into this living white paper. For each dataset already included, this paper is augmented: a supporting text is provided to clarify its relevance and potential applications, along with a direct link to access the data.
+The datasets presented in this living white paper are openly available on the platform [OSF](https://osf.io):  **Dataset 1** (M1 stimulations on NHPs) : https://osf.io/54vhx/, reference number : `54vhx`, **Dataset 1 bis** (M1 stimulations on rats) : A similar dataset that **Dataset 1** but conducted on rats is also available at https://osf.io/54vhx/, reference number : `54vhx`, **Dataset 2** (spinal cord stimulations on rats) : https://osf.io/kpb7x/, reference number : `kpb7x`. Additional datasets will be progressively integrated into this living white paper. For each dataset already included, this paper is augmented: a supporting text is provided to clarify its relevance and potential applications, along with a direct link to access the data.
 
 # CRediT authorship contribution statement
 
@@ -230,7 +225,7 @@ This work was supported by the Natural Sciences and Engineering Research Council
 
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
-# Aknowledgements
+# Acknowledgements
 
 The authors extend their gratitude to all scholars who have openly shared datasets for neurostimulation optimization, fostering the growth of the community. This includes the contributors who released **Dataset 1** in 2021. NeuroMOSAICS owes its existence to a steadfast community commitment to open science.
 
