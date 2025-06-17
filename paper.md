@@ -1,8 +1,32 @@
 ---
-numbering:
-  heading_2: false
-  figure:
-    template: Fig. %s
+title: 'NeuroMOSAICS: A collection of neurostimulation datasets - Multi-scale Open-Source Across Interfaces Conditions & Species.'
+tags:
+  - Neurostimulation
+  - Optimization 
+  - Machine learning
+  - Open source dataset
+authors:
+  - name: Lison Kardassevitch
+    affiliation: "1,2,3"
+  - name: Davide Burchielli
+    affiliation: "5,2,3"
+  - name: Numa Dancause
+    affiliation: "1,3,4"
+  - name: Marco Bonizzato
+    affiliation: "1,2,3,4,5"
+affiliations:
+ - name: Université de Montréal, Montreal, QC, Canada
+   index: 1
+ - name: Mila - Quebec Artificial Intelligence Institute, Montreal, QC, Canada
+   index: 2
+ - name: CIRCA - Centre Interdisciplinaire de Recherche sur le Cerveau et l’Apprentissage, Montreal, QC, Canada
+   index: 3
+ - name:  CIB - Biomedical Innovation Centre, Montreal, QC, Canada
+   index: 4
+ - name: Electrical Engineering, Polytechnique Montreal, Montreal, QC, Canada
+   index: 5
+date: 15 June 2025
+bibliography: paper.bib
 ---
 
 ## Introduction
