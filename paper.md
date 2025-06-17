@@ -31,10 +31,8 @@ bibliography: paper.bib
 
 ## Introduction
 
-
 Neurostimulation can be applied on a large panel of nervous system disorders and injuries by modulating motor, sensory and cognitive functions through electrical stimulation. This technology offers, amongst others, a promising method to restore motor functions in patients living with paralysis due to neurotrauma, with strong potential for enhanced efficacy through improved spatiotemporal precision [@ting2021neurostimulation;@james2018neuromodulation].
 Neuromodulation systems are becoming increasingly complex [@schupbach2017directional;@anderson2018optimized], and this trend is expected to continue and scale further in the future [@de2021future]. Advances in manufacturing, such as the miniaturization of electrodes enabling higher spatial selectivity, the development of biocompatible designs for targeting areas closer to the nervous system, and the integration of wireless systems providing greater freedom of movement, are key drivers of this evolution [@won2020emerging;@jun2017fully;@tsai2017very]. Whether in large channel-count or smaller devices such as current clinical deep brain stimulation (DBS) leads, the effectiveness of neuromodulation depends on system identification and on fine-tuning numerous control parameters to meet individual needs, problems that advanced optimization algorithms have the potential to solve more efficiently than traditional approaches. 
-
 
 ### A.I. In neurostimulation optimization
 
@@ -57,17 +55,20 @@ Our goal is to develop NeuroMOSAICS (Neurostimulation Multi-scale Open-Source Ac
 
 This living white paper intends to evolve in time with new incoming open-source datasets. New datasets will be added as we target additional unmet needs in neurostimulation optimization. Moreover, we aim to incorporate complex datasets that establish benchmarks and open avenues for novel algorithmic solutions. Datasets may also be introduced in response to community demand or as invited contributions. We welcome opportunities to review contributions from groups exploring high-dimensional optimization, to collaboratively grow this evolving body of work. 
 
-## Material and method 
+## Materials and methods 
 
 In this section we describe how each featured dataset has been collected. We wrote this section with a focus on clarity and a level of readership accessible to those without a background in neuroscience.
 
 ### Dataset 1 – Cortically evoked muscle responses: NHP forelimb and rat hindlimb
+
+:::{important} Dataset 1
 
 **Input:** coordinates of an electrode in a 96-electrode intracortical array for NHP and 32-electrode intracortical array for rats.  
 **Output:** Motor Evoked Potentials (MEPs) from 4 to 8 muscles, forearm and hand muscles for NHP and leg muscles for rat.  
 **Replicates:** Data were collected from N=4 NHP and N=6 rats (biological replicate). For each independent muscle, technical replicates ranged from 10 to 28 repetitions.  
 **Depth:** The same neurostimulation is repeated 10 to 28 times per site (muscle) per subject, resulting in an equivalent number of MEP measurements being collected. Each MEP represents the muscle response within a time window of -100 to 200 ms relative to the stimulation delivery (0 ms).  
 **Rationale:** To develop optimization algorithms to efficiently optimize neurostimulation within a set of electrode location options.  
+:::
 
 This dataset contains limb EMG responses to cortical stimulation in 4 male NHPs (2 macaques, 2 capuchins) and 6 female rats. The dataset, available on OSF, was collected to develop a Gaussian Process Bayesian Optimization (GPBO) framework, an algorithm designed to optimize neurostimulation parameters for maximizing MEPs. Cross-species data can challenge the robustness and adaptability of optimization algorithms, testing their ability to generalize across scales and from simpler to more complex cortical organizations, that approximate better the human brain. 
 
@@ -76,11 +77,13 @@ The rats were implanted with 32-microelectrode arrays in the hindlimb sensorimot
 
 ### Dataset 2 – Forelimb muscle responses to spinal stimulation in rats
 
+:::{important} Dataset 2
 **Input:** coordinates of an electrode in an epidural 64-electrode array.  
 **Output:** motor evoked potentials from 8 to 10 arm muscles.  
 **Replicates:** Data were collected from N = 9 biological replicates, defined as the number of distinct physical implants performed across 4 rats. Each implant corresponds to a separate array placement on the spinal cord between levels C3 and C6. For each array position, 10 to 15 repetitions of single-pulse stimulation were delivered to each electrode in random order using Tucker-Davis Technologies (TDT) equipment.   
 **Depth:** The same neurostimulation is repeated 10 to 15 times per site (muscle) per subject, resulting in an equivalent number of MEP measurements being collected. Each MEP represents the muscle response within a time window of -35 to 40 ms relative to the stimulation delivery (0 ms).   
 **Rationale:** To develop optimization algorithms to efficiently optimize neurostimulation within a set of electrode location options and multiple concurrent output muscle objectives (8-10 bilateral and varied agonist/antagonist muscles).
+:::
 
 This dataset contains EMG responses to spinal cord stimulation in the forelimbs of 4 female Long Evans rats. EMG electrodes were implanted bilaterally in the Biceps, Triceps, Flexor Carpi Radialis, Deltoid, and Dorso muscles. Spinal cord stimulation was delivered via a 64-electrode array placed epidurally.
 
@@ -106,7 +109,7 @@ For each placement, 10 repetitions of single-pulse stimulation were delivered to
 
 The raw signals in both datasets have been rectified.
 
-:::{admonition} Processing applied in **Dataset 2**
+:::{important} Processing applied in **Dataset 2**
 
 In addition to the raw data, a filtered version of the signal is provided in this dataset. The following processing steps were applied in order:  
 -	Blanking from stimulation artefact;  

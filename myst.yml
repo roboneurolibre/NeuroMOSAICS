@@ -22,7 +22,8 @@ project:
     - name: Marco Bonizzato
       affiliations: polymtl, udem, mila, circa, cib
       email: marco.bonizzato@polymtl.ca
-
+  funding:
+    - statement: This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC; RGPIN-2023-04370) and New Frontiers in Research Fund Exploration (NFRFE-2022-00394).
       
   affiliations:
     - id: polymtl
@@ -107,6 +108,9 @@ project:
     L Tr: Left Triceps
     L Bi: Left Biceps
     L Trs: Left Tors
+    ML: Machine Learning
+    RL: Reinforcement Learning
+    NN: Neural Networks
   bibliography:
     - paper.bib
   resources:
