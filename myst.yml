@@ -1,126 +1,131 @@
-# See docs at: https://mystmd.org/guide/frontmatter
-version: 1
 project:
-  title: 'NeuroMOSAICS: A collection of neurostimulation datasets - Multi-scale Open-Source Across Interfaces Conditions & Species.'
-  #subtitle: A template for reproducible preprints
-  binder: https://terrarium.evidencepub.io
-  thebe:
-    binder:
-      url: https://terrarium.evidencepub.io # NeuroLibre binder URL, production will override this.
-      repo: LisonK/NeuroMOSAICS # Production will override this.
-      ref: HEAD # Production will override this.
-  authors:
-    - name: Lison Kardassevitch
-      affiliations: udem, mila, circa
-      email: lison.kardassevitch@umontreal.ca
-    - name: Davide Burchielli
-      affiliations: polymtl, mila, circa
-      email: davide.burchielli@polymtl.ca
-    - name: Numa Dancause
-      affiliations: udem, circa, cib
-      email: numa.dancause@umontreal.ca
-    - name: Marco Bonizzato
-      affiliations: polymtl, udem, mila, circa, cib
-      email: marco.bonizzato@polymtl.ca
-  funding:
-    - statement: This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC; RGPIN-2023-04370) and New Frontiers in Research Fund Exploration (NFRFE-2022-00394).
-      
-  affiliations:
-    - id: polymtl
-      institution: Polytechnique Montreal
-      ror: https://ror.org/05f8d4e86 
-      isni: 0000 0004 0435 3292
-      department: Electrical Engineering
-      address: 2500 Chem. de Polytechnique
-      city: Montreal
-      region: Quebec
-      country: Canada
-      postal_code: H3T 1J4
-      phone: 1 (514) 340-4711
-    - id: udem
-      institution: Université de Montréal
-      ror: https://ror.org/0161xgx34
-      isni: 0000 0001 2104 2136
-      address: 3200 Jean-brillant
-      city: Montreal
-      region: Quebec
-      country: Canada
-      postal_code: H3T 1N8
-    - id: mila
-      institution: Mila - Quebec Artificial Intelligence Institute
-      ror: https://ror.org/05c22rx21
-      address: 6666 Saint-Urbain Street
-      city: Montreal
-      region: Quebec
-      country: Canada
-      postal_code: H2S 3H1
-    - id: circa
-      institution: CIRCA - Centre Interdisciplinaire de Recherche sur le Cerveau et l’Apprentissage
-      address: 3744, rue Jean-Brillant
-      city: Montreal
-      region: Quebec
-      country: Canada
-      postal_code: H1T 1P1
-    - id: cib
-      institution: CIB - Biomedical Innovation Centre
-      address: Pavillon Paul-G.-Desmarais, 2960 Chemin de la Tour,
-      city: Montreal
-      region: Quebec
-      country: Canada
-      postal_code: H3T 1J4
-
-  keywords:
-    - Neurostimulation
-    - Optimization 
-    - Machine learning
-    - Open source dataset
-  github: https://github.com/LisonK/NeuroMOSAICS # TODO
-  banner: featured.png
-  venue: Neurolibre #Production will override this.
-  subject: Living Preprint # Production will override this.
-  numbering:
-    headings: true
-  doi: 10.55458/neurolibre.xxxxx # Production will override this.
-  open_access: true
-  license:
-    content: CC-BY-4.0
-    code: MIT
   abbreviations:
-    MyST: Markedly Structured Markdown
-    NeuroMOSAICS: Neurostimulation Multi-scale Open-Source Across Interface, Conditions & Species
-    NHP: non-human primates
-    DBS: Deep Brain Stimulation
-    TMS: Transcranial Magnetic Stimulation
-    FCU: Flexor Carpi Ulnaris
-    ECR: Extensor Carpi Radialis
-    OP: Opponens Pollicis
-    FPB: Flexor Pollicis Brevis
     AP: Adductor Pollicis
-    MEP: Motor Evoked Potential
+    DBS: Deep Brain Stimulation
+    ECR: Extensor Carpi Radialis
+    EDC: Extensor Digitorum Communis
+    FCU: Flexor Carpi Ulnaris
     FDI: First Dorsal Interosseous
     FDS: Flexor Digitorum Superficialis
-    EDC: Extensor Digitorum Communis
-    R Tr: Right Triceps
+    FPB: Flexor Pollicis Brevis
+    L Bi: Left Biceps
+    L Tr: Left Triceps
+    L Trs: Left Tors
+    MEP: Motor Evoked Potential
+    ML: Machine Learning
+    MyST: Markedly Structured Markdown
+    NHP: non-human primates
+    NN: Neural Networks
+    NeuroMOSAICS: Neurostimulation Multi-scale Open-Source Across Interface, Conditions
+      & Species
+    OP: Opponens Pollicis
     R Bi: Right Biceps
+    R SpDel: Right Spinal Deltoid
+    R Tr: Right Triceps
     R Trs: Right Torso
     R WrFlex: Right Wrist flexor
-    R SpDel: Right Spinal Deltoid
-    L Tr: Left Triceps
-    L Bi: Left Biceps
-    L Trs: Left Tors
-    ML: Machine Learning
     RL: Reinforcement Learning
-    NN: Neural Networks
+    TMS: Transcranial Magnetic Stimulation
+  affiliations:
+  - address: 2500 Chem. de Polytechnique
+    city: Montreal
+    country: Canada
+    department: Electrical Engineering
+    id: polymtl
+    institution: Polytechnique Montreal
+    isni: 0000 0004 0435 3292
+    phone: 1 (514) 340-4711
+    postal_code: H3T 1J4
+    region: Quebec
+    ror: https://ror.org/05f8d4e86
+  - address: 3200 Jean-brillant
+    city: Montreal
+    country: Canada
+    id: udem
+    institution: "Universit\xE9 de Montr\xE9al"
+    isni: 0000 0001 2104 2136
+    postal_code: H3T 1N8
+    region: Quebec
+    ror: https://ror.org/0161xgx34
+  - address: 6666 Saint-Urbain Street
+    city: Montreal
+    country: Canada
+    id: mila
+    institution: Mila - Quebec Artificial Intelligence Institute
+    postal_code: H2S 3H1
+    region: Quebec
+    ror: https://ror.org/05c22rx21
+  - address: 3744, rue Jean-Brillant
+    city: Montreal
+    country: Canada
+    id: circa
+    institution: "CIRCA - Centre Interdisciplinaire de Recherche sur\_le Cerveau et\
+      \ l\u2019Apprentissage"
+    postal_code: H1T 1P1
+    region: Quebec
+  - address: Pavillon Paul-G.-Desmarais, 2960 Chemin de la Tour,
+    city: Montreal
+    country: Canada
+    id: cib
+    institution: CIB - Biomedical Innovation Centre
+    postal_code: H3T 1J4
+    region: Quebec
+  authors:
+  - affiliations: udem, mila, circa
+    email: lison.kardassevitch@umontreal.ca
+    name: Lison Kardassevitch
+  - affiliations: polymtl, mila, circa
+    email: davide.burchielli@polymtl.ca
+    name: Davide Burchielli
+  - affiliations: udem, circa, cib
+    email: numa.dancause@umontreal.ca
+    name: Numa Dancause
+  - affiliations: polymtl, udem, mila, circa, cib
+    email: marco.bonizzato@polymtl.ca
+    name: Marco Bonizzato
+  banner: featured.png
   bibliography:
-    - paper.bib
+  - paper.bib
+  binder: https://binder-mcgill.conp.cloud
+  copyright: NeuroLibre
+  doi: 10.55458/neurolibre.00033
+  funding:
+  - statement: This work was supported by the Natural Sciences and Engineering Research
+      Council of Canada (NSERC; RGPIN-2023-04370) and New Frontiers in Research Fund
+      Exploration (NFRFE-2022-00394).
+  github: https://github.com/roboneurolibre/NeuroMOSAICS
+  keywords:
+  - Neurostimulation
+  - Optimization
+  - Machine learning
+  - Open source dataset
+  license:
+    code: MIT
+    content: CC-BY-4.0
+  numbering:
+    headings: true
+  open_access: true
   resources:
-    - content/figure_cebus.ipynb
-    - content/figure_macaque.ipynb
-    - content/figure_rat1.ipynb
+  - content/figure_cebus.ipynb
+  - content/figure_macaque.ipynb
+  - content/figure_rat1.ipynb
+  subject: Living Preprint
+  thebe:
+    binder:
+      ref: main
+      repo: roboneurolibre/NeuroMOSAICS
+      url: https://binder-mcgill.conp.cloud
+  title: 'NeuroMOSAICS: A collection of neurostimulation datasets - Multi-scale Open-Source
+    Across Interfaces Conditions & Species.'
+  venue: NeuroLibre
 site:
-  template: article-theme # Or book-theme
-  #options:
-  #  favicon: static/favicon.ico # Production will override this for branding.
-  #  logo: static/logo.png # Production will override this for branding.
-  #  twitter: neurolibre
-
+  actions:
+  - title: "\U0001F3E0 Home"
+    url: https://doi.org/10.55458/neurolibre.00033
+  options:
+    favicon: favicon.ico
+    logo: logo.png
+    logo_text: NeuroLibre
+    twitter: neurolibre
+  template: article-theme
+version: 1
